@@ -6,9 +6,9 @@ import os
 app = Flask(__name__)  # sets up Flask variable
 
 # Tells Flask how to find database
-# client = MongoClient(host=f'{host}?retryWrites=false')
-# db = client.get_default_database()
-# playlists = db.playlists
+client = MongoClient()
+db = client.get_default_database()
+coffee_beans = db.coffee_beans
 
 
 @app.route('/')
@@ -24,7 +24,7 @@ def homepage():
         {'name': 'Arabica', 'location': 'Latin America',
          'smell': 'tart', 'taste': 'tart'}
     ]
-    return render_template('homepage.html', coffee_beans=coffee_beans)
+    return render_template('homepage.html', coffee_beans=coffee_beans.find())
 
 
 if __name__ == '__main__':
