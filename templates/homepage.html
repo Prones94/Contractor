@@ -7,6 +7,13 @@
 <br>
 <div class="container">
     <p>We are an online store dedicated to selling coffee beans and products from around the world for an affordable price.</p>
-    <small>Below are just a few of the coffee beans we have for sale.</small>
+    <div class="display">
+        <h2>Coffee Beans</h2>
+        <p>Below are just a few of the coffee beans we have for sale.</p>
+        {% for beans in coffee_beans %}
+        <h2>{{ beans.name }}</h2>
+        <p>{{ beans.location }}</p>
+        {% endfor %}
+    </div>
 </div>
 {% endblock %}
