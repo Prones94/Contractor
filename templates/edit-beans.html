@@ -1,0 +1,47 @@
+<!--templates/edit-beans.html-->
+{% extends 'base.html' %} {% block content %}
+<form action="POST" action="/coffee_beans/{{ bean._id }}/edit">
+  <fieldset>
+    <legend>Edit Information</legend>
+    <!--Title -->
+    <p>
+      <label for="name">Title</label><br />
+      <input
+        id="name"
+        type="text"
+        name="title"
+        value="{{ new_bean.name }}"
+      />
+    </p>
+    <!--Description of Coffee Beans -->
+    <p>
+      <label for="location">Location: </label><br />
+      <input
+        id="location"
+        type="text"
+        name="description"
+        value="{{ new_bean.location }}"
+      />
+      <label for="smell">Smell: </label><br />
+      <input
+        id="smell"
+        type="text"
+        name="description"
+        value="{{ new_bean.smell }}"
+      />
+      <label for="taste">Taste: </label><br />
+      <input
+        id="taste"
+        type="text"
+        name="description"
+        value="{{ new_bean.taste }}"
+      />
+    </p>
+    <!--Button for Submit-->
+    <p>
+      <button type="submit">Click here to Edit</button>
+    </p>
+  </fieldset>
+</form>
+
+{% endblock %}

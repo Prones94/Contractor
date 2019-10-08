@@ -2,9 +2,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>{{ new_bean.name}}</h1>
-<h3>{{ new_bean.location }}</h3>
-<h3>{{ new_bean.smell }}</h3>
-<h3>{{ new_bean.taste }}</h3>
+<h1>Name: {{ new_bean.name}}</h1>
+<h3>Place originated from: {{ new_bean.location }}</h3>
+<h3>Coffee smell: {{ new_bean.smell }}</h3>
+<h3>Flavor Profile: {{ new_bean.taste }}</h3>
+<br>
+<a href="/">Back to Main Page</a>
+<a href="/coffee_beans/{{bean._id}}/edit">Edit</a>
 
 {% endblock %}
