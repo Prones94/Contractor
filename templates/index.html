@@ -3,7 +3,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Welcome to Coffee R Us!</h1>
+<h1>Welcome to Yo Beanz!</h1>
 <div class="container">
     <p>We are an online store dedicated to selling coffee beans and products from around the world for an affordable price.</p>
     <div class="display">
@@ -11,8 +11,8 @@
         <p>Below are just a few of the coffee beans we have for sale.</p>
         
     
-        {% for shopping_bean in coffee_beans %}
-            <li>{{ shopping_bean.name }}, {{ shopping_bean.location }}</li>
+        {% for beans in coffee_beans %}
+            <li><a href="/coffee_beans/{{ beans._id }}">{{beans.name}}</a></li>
 
         {% endfor %}
 

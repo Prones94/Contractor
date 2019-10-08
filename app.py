@@ -47,15 +47,20 @@ def new_beans():
 @app.route('/beans', methods=['POST'])
 def beans_submit():
     '''Displays form to make new bean cart'''
-    shopping_beans = {
+    beaninfo = {
         'name': request.form.get('name'),
         'location': request.form.get('location'),
         'smell': request.form.get('smell'),
         'taste': request.form.get('taste')
     }
-    coffee_beans.insert_one(shopping_beans)
-    return redirect(url_for('index'))
+    coffee_beans.insert_one(beaninfo)
+    return redirect(url_for('homepage'))
 
+@app.route('/coffee_beans/<beans_id>')
+def show_list(beans_id):
+    '''Shows individual bean information'''
+    new_bean = coffee_beans.find_one({'_id':ObjectId(beans_id)})
+    return render_template('show-beans.html',new_bean=new_bean)
 
 
 
