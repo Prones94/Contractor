@@ -1,11 +1,13 @@
 body {
     font-family: 'Lora';
-    background-image: linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url("static/img/bg.jpg");
+    background-image:linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)),url("img/bg.jpg");
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
   }
-  
+  h1,h2,h3,p,legend {
+    color: cornsilk;
+  }
   h1,
   h2,
   h3,
@@ -14,11 +16,20 @@ body {
   h6 {
     font-family: 'Raleway';
   }
-  
+  fieldset {
+    text-align: center;
+  }
+  li,p {
+    text-align: center;
+    font-size: 30px;
+  }
   p {
     line-height: 1.75;
   }
   
+  button {
+    font-size: 25px;
+  }
   .text-faded {
     color: rgba(255, 255, 255, 0.3);
   }
