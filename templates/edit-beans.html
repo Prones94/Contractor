@@ -1,40 +1,40 @@
 <!--templates/edit-beans.html-->
 {% extends 'base.html' %} {% block content %}
-<form action="POST" action="/coffee_beans/{{ bean._id }}/edit">
+<form method="POST" action="/coffee_beans/{{ bean_detail._id }}/edit">
   <fieldset>
     <legend>Edit Information</legend>
     <!--Title -->
     <p>
       <label for="name">Title</label><br />
       <input
-        id="name"
+        name="name"
         type="text"
         name="title"
-        value="{{ new_bean.name }}"
+        value="{{ bean_detail.name }}"
       />
     </p>
     <!--Description of Coffee Beans -->
     <p>
       <label for="location">Location: </label><br />
       <input
-        id="location"
+        name="location"
         type="text"
         name="description"
-        value="{{ new_bean.location }}"
+        value="{{ bean_detail.location }}"
       />
       <label for="smell">Smell: </label><br />
       <input
-        id="smell"
+        name="smell"
         type="text"
         name="description"
-        value="{{ new_bean.smell }}"
+        value="{{ bean_detail.smell }}"
       />
       <label for="taste">Taste: </label><br />
       <input
-        id="taste"
+        name="taste"
         type="text"
         name="description"
-        value="{{ new_bean.taste }}"
+        value="{{ bean_detail.taste }}"
       />
     </p>
     <!--Button for Submit-->

@@ -7,7 +7,14 @@
 <h3>Coffee smell: {{ new_bean.smell }}</h3>
 <h3>Flavor Profile: {{ new_bean.taste }}</h3>
 <br>
-<a href="/">Back to Main Page</a>
-<a href="/coffee_beans/{{bean._id}}/edit">Edit</a>
+<div class="buttons">
+    <a href="/">Back to Main Page</a>
+    <a href="/coffee_beans/{{ new_bean._id }}/edit">Edit</a>
+    <form action="POST" action="/coffee_beans/{{ new_bean._id }}/delete">
+        <button type="submit">Delete</button>
+    </form>
+
+</div>
+<!-- <a href="/coffee_beans/{{ new_bean._id }}/delete">Delete</a> -->
 
 {% endblock %}
