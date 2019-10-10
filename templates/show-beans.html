@@ -10,11 +10,6 @@
 <div class="buttons">
     <a href="/">Back to Main Page</a>
     <a href="/coffee_beans/{{ new_bean._id }}/edit">Edit</a>
-    <form action="POST" action="/coffee_beans/{{ new_bean._id }}/delete">
-        <button type="submit">Delete</button>
-    </form>
-
+    <a href="/coffee_beans/{{ new_bean._id }}/delete">Delete</a>
 </div>
-<!-- <a href="/coffee_beans/{{ new_bean._id }}/delete">Delete</a> -->
-
 {% endblock %}

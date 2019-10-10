@@ -89,7 +89,7 @@ def edit_info(coffee_id):
     bean_detail = coffee_beans.find_one({'_id': ObjectId(coffee_id)})
     return render_template('edit-beans.html', bean_detail=bean_detail)
 
-@app.route('/coffee_beans/<beans_id>', methods=['POST'])
+@app.route('/coffee_beans/<beans_id>', methods=['POST', 'GET'])
 def update_beancart(beans_id):
     '''This will submit the updated cart'''
     new_cart = {
@@ -103,7 +103,7 @@ def update_beancart(beans_id):
         {'$set': new_cart})
     return redirect(url_for('homepage', beans_id=beans_id))
 
-@app.route('/coffee_beans/<new_beans_id>/delete', method=['POST'])
+@app.route('/coffee_beans/<new_beans_id>/delete')
 def delete_beans(new_beans_id):
     '''Deletes one type of bean....I think'''
     coffee_beans.delete_one({'_id': ObjectId(new_beans_id)})
